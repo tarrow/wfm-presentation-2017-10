@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<img src="images/CMLogo.png">
+				</section>
+				<section>
+					<section><h1>What is ContentMine?</h1></section>
+					<section>
+						Peter Murray-Rust at Wikimania 2014
+						<img src="images/PMRWikimania.jpg">
+					</section>
+					<section>Tom and Charles</section>
+				</section>
+				<section>
+					<section><h1>What is WikiFactMine?</h1></section>
+					<section>WMF: Project Grant Funded</section>
+					<section><h1>Supported by:</h1>
+						<ul>
+							<li>WMF</li>
+							<li>WMUK</li>
+							<li>ContentMine</li>
+						<ul>
+					</section>
+				</section>
+				<section>
+					<section>What is Wikidata?</section>
+					<section>
+						<ul>
+							<li>Items</li>
+							<li>Properties</li>
+						<ul>			
+					</section>
+					<section><img src="images/item.png"></section>
+					<section><img src="images/statement.png"></section>
+				</section>
+				<section>
+					<section><h1>What is text mining?</h1></section>
+					<section>Extracting information from text with machines</section>
+				</section>
+				<section>
+					<section><h1>What are we doing?</h1></section>
+					<section>Daily download of Open Access papers (mostly biomedical) from EuropePMC</section>
+					<section>Pluck out 'facts' Related to certain wikidata items</section>
+					<section>
+						<img src="images/WFM_Schematic.png">
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>What does a WikiFactMine 'fact' look like?</h1>
+					</section>
+					<section>
+						<table class="table table-bordered table-hover table-condensed">
+						<tr>
+							<th>ContentMine ID</th>
+							<th>Wikidata Item</th> 
+							<th>Paper</th>
+							<th>Prefix</th>
+							<th>Term</th>
+							<th>Postfix</th>
+						</tr>
+						<tr>
+							<td>CM.oncologydiseases3</td>
+							<td>Q128581</td> 
+							<td>PMC5537693</td>
+							<td>PDL1 has also been shown to be overexpressed in</td>
+							<td>breast cancer</td>
+							<td>cells, which underscores the significance of PDL1 as a target</td>
+						</tr>
+						</table>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>What are Dictionaries?</h1>
+					</section>
+					<section>
+						List of terms for us to search for
+					</section>
+					<section>Obtained from various sources including Wikidata</section>
+					<section>You can make your own and we'll mine the literature for them</section>
+					<section>Currently around 300k terms in ca. 80 dictionaries</section>
+					<section>
+						<p>From topic areas like:</p>
+
+						<ul>
+							<li>Diseases</li>
+							<li>Drugs</li>
+							<li>Soil Types</li>
+							<li>Many more...</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>fatameh</h1>
+					</section>
+					<section>Nearly 3 Million Wikidata Items About Scientific Papers Edited using the Tool</section>
+				</section>
+				<section>
+					<section><h1>How can you get involved with WikiFactMine?</h1></section>
+					<section>Build dictionaries for areas you're interested in
+						 <img src="images/aaraa.png">
+					</section>
+					<section>
+						<img src="images/aaraaadd.png">
+					</section>
+					<section><p>Build something with our API</p>
+						<img src="images/api.png">
+					</section>
+					<section>Give us feedback about the facts so far</section>
+				</section>
+				<section>
+					<section><h1>What tools have we built?</h1></section>
+					<section>WikiFactMine Pipeline</section>
+					<section>WikiFactMine API</section>
+					<section>aaraa</section>
+					<section>fatameh</section>
+					<section>WikiFactMine Wikidata Userscript</section>
+					<section>FactVis</section>
+				</section>
+				<section>
+					<section><h1>Where are we going next?</h1></section>
+					<section><h1>Gamification to find dictionaries with more likelyhood of success</h1></section>
+					<section><h1>Add main topic statements to items about papers using PST</h1></section>
+					<section><h1>Return papers which contain entities in unreferenced statements</h1></section>
+				</section>
+				<section>
+					Where to find more:
+					https://wikidata.org/wiki/Wikidata:WFM
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				width: "100%",
+				height: "100%",
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
